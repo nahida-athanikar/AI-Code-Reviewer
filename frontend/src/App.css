@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Fira Code', monospace;
+  background-color: #0f1117;
+  color: #f5f5f5;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Left and right panels */
+.left, .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #1e1e1e;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  min-height: 400px;
+  overflow: hidden;
+}
+.left {
+  padding: 0.8rem 1rem 0 1rem;
+}
+
+/* Panel title */
+.panel-title {
+  margin-top: -12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: #61dafb;
+  text-align: center;
+}
+
+.right .panel-title {
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.7rem;
+}
+
+
+.left .react-simple-code-editor {
+  flex: 1;
+  min-height: 150px;
+  max-height: 60vh;
+  border-radius: 0.5rem;
+  background: #1a1a1a;
+  color: #d4d4d4;
+  overflow-y: auto;
+}
+
+.review-btn {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.review-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.review-btn:disabled {
+  background: #444;
+  cursor: not-allowed;
+}
+
+.right {
+  border-radius: 0.7rem;
+  overflow-y: auto;
+}
+
+.markdown-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+
+/* Default fallback styles so raw markdown also looks good */
+.markdown-content p {
+  margin: 6px 0;
+  line-height: 1.6;
+  color: #e4e4e4;
+}
+
+.markdown-content ul {
+  margin: 6px 0;
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.markdown-content li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+
+.markdown-content code {
+  background: #1e1e1e;
+  color: #f8f8f2;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+}
+
+.markdown-content pre {
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  color: #f8f8f2;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  border: 1px solid #555;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  margin: 1rem 0 0.5rem;
+  color: #61dafb;
+}
+
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+  color: #aaa;
+  border: 1px dashed #444;
+  border-radius: 0.6rem;
+  background: #1b1b1b;
+}
+
+/* Markdown styles */
+.md-heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 12px 0 6px;
+  color: #00bfa6;
+}
+
+.md-paragraph {
+  margin: 6px 0;
+  line-height: 1.6;
+  color: #e4e4e4;
+}
+
+.md-list {
+  margin: 4px 0;
+  padding-left: 1.2rem;
+  position: relative;
+  color: #f1f1f1;
+}
+
+.md-code.inline {
+  background: #2a2a2a;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Fira Code", monospace;
+  color: #ff6b6b;
+}
+
+.md-code.block {
+  display: block;
+  background: #383636;
+  padding: 12px;
+  border-radius: 6px;
+  overflow: auto;
+  overflow-x: auto;
+  margin: 8px 0;
+  color: #c3e88d;
+  position: relative;
+
+}
+
+.md-pre {
+  margin: 8px 0;
+}
+
+/* Scrollbars */
+.left::-webkit-scrollbar,
+.right::-webkit-scrollbar {
+  width: 8px;
+}
+
+.left::-webkit-scrollbar-thumb,
+.right::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 0.5rem;
+  }
+
+  .left, .right {
+    flex: none;
+    height: auto;
+    min-height: 250px;
+  }
+
+  .left .react-simple-code-editor {
+    max-height: 40vh;
+  }
+
+  .review-btn {
+    width: 100%;
+  }
+}
+
+/* Highlighted issues/suggestions */
+.issue-item {
+  color: #e74c3c;
+  margin-bottom: 5px;
+}
+
+.suggestion-item {
+  color: #3498db;
+  margin-bottom: 5px;
+}
+
+.warning {
+  color: orange;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Debug panel */
+.review-language {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.debug-panel {
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.debug-summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.debug-content {
+  margin-top: 10px;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+.debug-language,
+.debug-issues,
+.debug-suggestions {
+  margin-bottom: 10px;
+}
+
+.corrected-code {
+  margin-top: 20px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background: #1e1e1e;
+  color: #dcdcdc;
+  padding: 10px;
+  font-family: "Fira Code", monospace;
+  white-space: pre-wrap;
+}
+
+.download-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: white;
+  color: black;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.download-btn:hover {
+  opacity: 0.9;
+}
+
+/* Add to your App.css or a dedicated CSS file */
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem;
+  background: rgba(255, 255, 255, 0.1); /* Slight transparent background */
+  color: #cbd5e1;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  z-index: 10;
+  align-items: end;
+}
+
+.copy-button:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+
