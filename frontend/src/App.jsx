@@ -30,7 +30,7 @@ function App() {
     setReview(null);
 
     try {
-      const response = await axios.post('http://localhost:3000/ai/get-review', { code });
+      const response = await axios.post('https://ai-code-reviewer-ueix.onrender.com/ai/get-review', { code });
       setReview(response.data.review || response.data); // backend returns { language, issues, suggestions }
     } catch (err) {
       setError("⚠️ Unable to fetch review at the moment. Please try again later.");
