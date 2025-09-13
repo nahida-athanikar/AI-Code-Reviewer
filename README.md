@@ -52,7 +52,6 @@ AI-Code-Reviewer/
 
 ## 📸 Screenshots
 
-_(Add snapshots here to showcase the app’s interface)_  
 ![AI Code Reviewer Dashboard](frontend/src/assets/AI%20code%20reviewer%20dashboard.png)  
 ![Code Editing Interface](frontend/src/assets/code%20editing%20interface.png)  
 ![Markdown Preview](frontend/src/assets/Review%20Bad%20code%20into%20Corrected%20Code.png)
