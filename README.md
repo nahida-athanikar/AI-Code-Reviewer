@@ -71,7 +71,7 @@ This project gave me an opportunity to:
 
 It’s a great addition to my portfolio, showcasing practical skills in full-stack development and AI integrations!
 
-👉 **Check it out live here:** [https://ai-code-reviewer-six-rho.vercel.app/](Ai code reviewer)
+👉 **Check it out live here:** [AI Code reviewer](https://ai-code-reviewer-six-rho.vercel.app/)
 
 
 
