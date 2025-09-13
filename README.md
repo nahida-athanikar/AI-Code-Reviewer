@@ -32,19 +32,19 @@ A smart and efficient tool that helps developers write clean, error-free code by
 
 ## 📂 Project Structure
 
-AI-Code-Reviewer/
-├── backend/
-│ ├── controllers/ # API logic for handling requests
-│ ├── routes/ # Defined API endpoints
-│ ├── .env # Configuration for API keys and ports
-│ └── server.js # Main server setup
-├── frontend/
-│ ├── public/ # Static assets like icons and HTML templates
-│ ├── src/ # React components and pages
-│ ├── .env # API URLs and configurations
-│ └── package.json # Dependencies and scripts
-├── README.md # Project documentation
-└── .git/ # Version control setup
+AI-Code-Reviewer/      
+├── backend/        
+│ ├── controllers/      
+│ ├── routes/       
+│ ├── .env       
+│ └── server.js       
+├── frontend/      
+│ ├── public/      
+│ ├── src/      
+│ ├── .env      
+│ └── package.json     
+├── README.md      
+└── .git/      
 
 
 
