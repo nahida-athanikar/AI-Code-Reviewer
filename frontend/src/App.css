@@ -301,12 +301,12 @@ html, body, #root {
 
 .download-btn {
   margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
+  padding: 8px 16px;
   background: white;
   color: black;
   font-weight: 600;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
@@ -315,27 +315,20 @@ html, body, #root {
   opacity: 0.9;
 }
 
-/* Add to your App.css or a dedicated CSS file */
-.copy-button {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  padding: 0.25rem;
-  background: rgba(255, 255, 255, 0.1); /* Slight transparent background */
-  color: #cbd5e1;
-  opacity: 0.7;
-  transition: opacity 0.2s ease, background 0.2s ease;
+.copy-btn {
+  background-color: #4CAF50;
+  color: white;
   border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  margin: 10px;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 0.25rem;
-  z-index: 10;
-  align-items: end;
 }
 
-.copy-button:hover {
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+.copy-btn:hover {
+  background-color: #45a049;
 }
+
 
 

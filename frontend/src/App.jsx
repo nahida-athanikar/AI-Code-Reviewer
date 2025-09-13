@@ -95,7 +95,7 @@ function App() {
                   <code className="md-code inline" {...props}>{children}</code>
                 ) : (
                   <pre className="md-code block" {...props}>{children}
-                 <CopyButton text={Array.isArray(children) ? children.join('') : children} />
+                 {/* <CopyButton text={Array.isArray(children) ? children.join('') : children} /> */}
                   </pre>
                 ),
               pre: (props) => <pre className="md-pre" {...props} />,
@@ -107,10 +107,22 @@ function App() {
             {/* 📥 Download Button */}
             <button 
               className="download-btn" 
-              onClick={() => downloadAsMarkdown(review)}
+              onClick={() => downloadAsText(review)}
             >
-              📥 Download as README.md
+              📄 Export as Text
             </button>
+
+             {/* ✅ Copy Button */}
+            <button 
+              className="copy-btn"
+              onClick={() => {
+                navigator.clipboard.writeText(review);
+                alert("📋 Review copied to clipboard!");
+              }}
+            >
+              📋 Copy Review
+            </button>
+            
           </div>
           )}
       </div>
@@ -120,9 +132,11 @@ function App() {
   );
 }
 
-function downloadAsMarkdown(content) {
-  const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
-  saveAs(blob, "README.md");
+// Download as Text
+function downloadAsText(content) {
+  const header = `Code Review Report\nDate: ${new Date().toLocaleString()}\n\n`;
+  const blob = new Blob([header + content], { type: "text/plain;charset=utf-8" });
+  saveAs(blob, `code-review-${new Date().toISOString().slice(0,10)}.txt`);
 }
 
 
