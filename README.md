@@ -51,15 +51,15 @@ AI-Code-Reviewer/
 ---
 ## 🛠️ Run Locally
 
-*Start Backend*
-cd backend 
-npm i
-node server.js
+#Start Backend
+- cd backend 
+- npm i
+- node server.js
 
-*Start Frontend*
-npm i
-cd ../frontend
-npm run dev
+#Start Frontend
+- npm i
+- cd ../frontend
+- npm run dev
 
 ---
 
