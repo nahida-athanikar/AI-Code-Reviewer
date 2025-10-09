@@ -49,6 +49,20 @@ AI-Code-Reviewer/
 
 
 ---
+## 🛠️ Run Locally
+
+*Start Backend*
+cd backend 
+npm i
+node server.js
+
+*Start Frontend*
+npm i
+cd ../frontend
+npm run dev
+
+---
+
 
 ## 📸 Screenshots
 
